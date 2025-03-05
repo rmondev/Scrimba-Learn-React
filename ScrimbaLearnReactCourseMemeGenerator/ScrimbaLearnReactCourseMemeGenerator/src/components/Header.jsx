@@ -1,6 +1,11 @@
+import trollFace from '../assets/troll-face.png'
+
 const Header = () => {
     return (
-        <h1>Header</h1>
+        <header className='header'>
+            <img src={trollFace}/>
+            <h1>Meme Generator</h1>
+        </header>
     )
 }
 export default Header
