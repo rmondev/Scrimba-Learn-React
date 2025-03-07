@@ -3,7 +3,7 @@ import React from 'react'
 const Main = () => {
 
   const [ingredients, setIngredients] = React.useState([
-    
+
   ])
  
   
@@ -13,27 +13,35 @@ const Main = () => {
     )
   }) 
 
-  const handleSubmit = (event) =>{
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const newIngredient = formData.get("ingredient")
+  // const handleSubmit = (event) =>{
+  //   event.preventDefault()
+  //   const formData = new FormData(event.currentTarget)
+  //   const newIngredient = formData.get("ingredient")
 
-    setIngredients(prevIngredients => [
-      ...prevIngredients, 
-      newIngredient
-    ])
+  //   setIngredients(prevIngredients => [
+  //     ...prevIngredients, 
+  //     newIngredient
+  //   ])
     
     
+  // }
+
+  // Submit form data using action attribute instead:
+
+  const addIngredient = (formData) => {
+    const newIngredient = formData.get("ingredient") // use name attribute for ingredient input 
+
+    setIngredients(prevIngredients => [...prevIngredients, newIngredient])
   }
 
   return (
     <main>
-      <form className='add-ingredient-form' onSubmit={handleSubmit}>
+      <form className='add-ingredient-form' action={addIngredient}>
         <input 
-          aria-label='Add Ingredient'
           type='text'
-          placeholder='e.g.oregano'
           name='ingredient'
+          placeholder='e.g.oregano'
+          aria-label='Add Ingredient'
         />
         
         <button>

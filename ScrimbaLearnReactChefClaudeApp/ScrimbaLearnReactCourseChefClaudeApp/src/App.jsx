@@ -6,6 +6,7 @@ import ClassStateCounter from './components/ClassStateCounter'
 import LectureTernaryOperator from './components/LectureTernaryOperator'
 import LectureComplexStateArrays from './components/LectureComplexStateArrays'
 import LectureComplexStateObjects from './components/LectureComplexStateObjects'
+import LectureForms from '../src/components/LectureForms'  
 function App() {
 
 
@@ -19,7 +20,8 @@ function App() {
       {/* <ClassStateCounter/> */}
       {/* <LectureTernaryOperator/> */}
       {/* <LectureComplexStateArrays/> */}
-      <LectureComplexStateObjects/>
+      {/* <LectureComplexStateObjects/> */}
+      <LectureForms/>
     </>
   )
 }
